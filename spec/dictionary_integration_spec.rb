@@ -14,4 +14,9 @@ describe('the add word route', {:type => :feature}) do
     expect(page).to have_content('Ruby')
   end
 
+  it('shows the user the words he or she added') do
+    visit('/')
+    expect(page).to have_content('Ruby')
+  end
+
 end
