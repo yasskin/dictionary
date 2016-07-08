@@ -1,5 +1,5 @@
 class Word
-  attr_reader :entry_word, :definitions
+  attr_reader :word_entry, :definitions
 
   @@entry_words = []
 
@@ -12,8 +12,8 @@ class Word
   end
 
   def initialize(attributes)
-    @entry_word = attributes[:entry_word]
-    @definitions = []
+    @word_entry = attributes[:word_entry]
+    @all_definitions = []
     @@entry_words.push(self)
   end
 
