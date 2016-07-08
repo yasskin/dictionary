@@ -1,25 +1,16 @@
 class Word
-  attr_reader(:word_entry, :definition_entries, :id)
+  attr_reader(:name, :definition_entries, :id)
 
   @@word_entries = []
 
-  def self.clear()
-    @@word_entries = []
-  end
-
-  def self.contacts()
-    @@word_entries
-  end
-
-  def initialize(attributes)
-    @word_entry = attributes[:word_entry]
+  define_method(:initialize) do |attributes|
+    @name = attributes.fetch(:name)
     @definition_entries = []
     @id = @@word_entries.length + 1
-    @@word_entries.push(self)
   end
 
-  def add_definition(definition_entry)
-    @definition_entries.push(definition_entry)
+  define_method(:save) do
+    @@word_entries.push(self)
   end
 
   define_singleton_method(:clear) do
@@ -33,15 +24,15 @@ class Word
   define_singleton_method(:find) do |id|
     found_word = nil
     @@word_entries.each() do |word|
-      if word_entry.id().eq?(id)
+      if word.id().eq?(id)
         found_word = word
       end
     end
     found_word
   end
-  
-  # def self.save()
-  #   @@word_entries.push(self)
-  # end
+
+  define_method(:add_definition) do |definition|
+    @definition_entries.push(definition)
+  end
 
 end

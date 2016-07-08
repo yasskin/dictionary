@@ -5,20 +5,22 @@ require('./lib/word')
 require('./lib/definition')
 
 get('/') do
+  @words = Word.all()
   erb(:index)
 end
 
-get('words/new') do
-  erb(:words_form)
+get('/words/new') do
+  erb(:word_form)
 end
 
-get('/words') do
-  @word_entries = Word.all()
-  erb(:words)
+post('words') do
+  @name = params.fetch('name')
+  @word = Word.new({:name => @name})
+  @word.save()
+  erb(:word_success)
 end
 
-post('/words') do
- word_entry = params.fetch('word_entry')
- Word.new(word_entry).save()
- @word_entries = Word.all()
+get('words/:id') do
+  @word = Word.find(params.fetch('id').to_i)
+  erb(:word)
 end

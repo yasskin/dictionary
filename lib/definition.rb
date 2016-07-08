@@ -1,8 +1,22 @@
 class Definition
   attr_reader(:definition_entry)
 
+  @@definitions = []
+
   define_method(:initialize) do |attributes|
     @definition_entry = attributes.fetch(:definition_entry)
+  end
+
+  define_method(:save) do
+    @@definitions.push(self)
+  end
+
+  define_singleton_method(:all) do
+    @@definitions
+  end
+
+  define_singleton_method(:clear) do
+    @@definitions = []
   end
 
   define_singleton_method(:find) do |id|
@@ -14,12 +28,5 @@ class Definition
     end
     found_definition
   end
-  
-  define_singleton_method(:all) do
-    @@definitions
-  end
 
-  define_singleton_method(:clear) do
-    @@definitions = []
-  end
 end

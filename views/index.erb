@@ -1,12 +1,10 @@
 <h1>Dictionary</h1>
 
-<form class="" action="/new_word" method="get">
+<a href='/words/new'>Add a Word</a>
 
-</form>
-
-<h1>Existing Words</h1>
+<h1>Words</h1>
 <ul>
   <% @word_entries.each() do |word| %>
-    <li><a href="/word/<% word.id() %>"><%= word.word_entry()%></a></li>
+    <li><a href="/words/<%= word.id() %>"><%= word.word_entry()%></a></li>
   <% end %>
 </ul>

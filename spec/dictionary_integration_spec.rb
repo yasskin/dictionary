@@ -1,15 +1,17 @@
 require('capybara/rspec')
+require('launchy')
 require('./app')
 
 Capybara.app = Sinatra::Application
 set(:show_exceptions, false)
 
-describe "root route", {:type => :feature} do
-
-  it("clicks on the add new word button and displays the form for that route") do
+describe('the add word route', {:type => :feature}) do
+  it("clicks on the add new word link and display the word that has been added") do
     visit('/')
-    click_button("Add Word")
-    expect(page).to have_content("Add New Word")
+    click_link('Add a Word')
+    fill_in('name', :with => 'Ruby')
+    click_button('Add Word')
+    expect(page).to have_content('Ruby')
   end
 
 end
