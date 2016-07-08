@@ -5,14 +5,6 @@ class Definition
     @definition_entry = attributes.fetch(:definition_entry)
   end
 
-  define_singleton_method(:all) do
-    @@definitions
-  end
-
-  define_singleton_method(:clear) do
-    @@definitions = []
-  end
-
   define_singleton_method(:find) do |id|
     found_definition = nil
     @@definitions.each() do |definition|
@@ -22,5 +14,12 @@ class Definition
     end
     found_definition
   end
+  
+  define_singleton_method(:all) do
+    @@definitions
+  end
 
+  define_singleton_method(:clear) do
+    @@definitions = []
+  end
 end

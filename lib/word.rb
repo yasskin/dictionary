@@ -22,10 +22,6 @@ class Word
     @definition_entries.push(definition_entry)
   end
 
-  # def self.save()
-  #   @@word_entries.push(self)
-  # end
-
   define_singleton_method(:clear) do
     @@word_entries = []
   end
@@ -43,5 +39,9 @@ class Word
     end
     found_word
   end
+  
+  # def self.save()
+  #   @@word_entries.push(self)
+  # end
 
 end
