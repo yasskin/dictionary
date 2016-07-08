@@ -13,7 +13,7 @@ get('/words/new') do
   erb(:word_form)
 end
 
-post('words') do
+post('/words') do
   @name = params.fetch('name')
   @word = Word.new({:name => @name})
   @word.save()
