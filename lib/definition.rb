@@ -1,4 +1,5 @@
 class Definition
+
   attr_reader(:definition_one, :id)
 
   @@definitions = []

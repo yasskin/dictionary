@@ -1,6 +1,6 @@
 <h1><%= @word.name() %></h1>
 <div>
-  <%@word.definition().each() do |definition, i|%>
+  <%@word.definition_entries().each() do |definition, i|%>
   <ul>
     <li>Definition</li>
     <li>Definition: <%=definition.definition_one()%></li>
