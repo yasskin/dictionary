@@ -14,7 +14,7 @@ _Dictionary is an application that contains two custom Ruby classes: Word, and D
 
 * _You can check it out on Heroku_
 
-* [https:// ??? .herokuapp.com/]
+* [https://infinite-sea-70562.herokuapp.com/]
 
 ## Known Bugs
 
