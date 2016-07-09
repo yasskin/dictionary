@@ -52,8 +52,8 @@ describe('Word') do
     it("should return a definition entry with an array that has two definitions") do
       new_word = Word.new({name: "Ruby"})
       new_word.save()
-      new_definition_entry_one = Definition.new({definition_entry: "A dynamic, open source programming language with a focus on simplicity and productivity."})
-      new_definition_entry_two = Definition.new({definition_entry: "Ruby blends parts of other languages (Perl, Smalltalk, Eiffel, Ada, and Lisp) to form a new language that balances functional programming with imperative programming."})
+      new_definition_entry_one = Definition.new({definition_one: "A dynamic, open source programming language with a focus on simplicity and productivity."})
+      new_definition_entry_two = Definition.new({definition_one: "Ruby blends parts of other languages (Perl, Smalltalk, Eiffel, Ada, and Lisp) to form a new language that balances functional programming with imperative programming."})
       new_word.add_definition(new_definition_entry_one)
       new_word.add_definition(new_definition_entry_two)
       expect(new_word.definition_entries()).to(eq([new_definition_entry_one, new_definition_entry_two]))

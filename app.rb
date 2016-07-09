@@ -13,6 +13,11 @@ get('/words/new') do
   erb(:word_form)
 end
 
+get('/words/:id') do
+  @word = Word.find(params.fetch('id').to_i())
+  erb(:word)
+end
+
 post('/words') do
   @name = params.fetch('name')
   @word = Word.new({:name => @name})
@@ -20,18 +25,14 @@ post('/words') do
   erb(:word_success)
 end
 
-get('words/:id') do
-  @word = Word.find(params.fetch('id').to_i())
-  erb(:word)
-end
-
-get('words/:id/definitions/new') do
+get('/words/:id/definitions/new') do
   @word = Word.find(params.fetch('id').to_i())
   erb(:definition_form)
 end
 
-post('definitions') do
-  @definition = Definition.new({:definition => @definition})
+post('/definitions') do
+  @definition_one = params.fetch('definition-one')
+  @definition = Definition.new({:definition_one => @definition_one})
   @definition.save()
   @word = Word.find(params.fetch('word_id').to_i())
   @word.add_definition(@definition)

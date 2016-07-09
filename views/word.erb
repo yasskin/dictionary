@@ -1,6 +1,15 @@
-<h1>Add Word</h1>
+<h1><%= @word.name() %></h1>
+<div>
+  <%@word.definition().each() do |definition, i|%>
+  <ul>
+    <li>Definition</li>
+    <li>Definition: <%=definition.definition_one()%></li>
+  </ul>
+  <br>
+  <% end %>
+</div>
 
-<form action="/create_word" class="" method="post">
-  <input type="text" name="new_word" value="">New Word
-  <button type="submit" name="button">Add Word</button>
-</form>
+<ul>
+  <li><a href='/words/<%=@word.id()%>/definitions/new'>Add a Definition</a></li>
+  <li><a href='/'>Home</a></li>
+</ul>

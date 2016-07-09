@@ -1,10 +1,11 @@
 class Definition
-  attr_reader(:definition_entry)
+  attr_reader(:definition_one, :id)
 
   @@definitions = []
 
   define_method(:initialize) do |attributes|
-    @definition_entry = attributes.fetch(:definition_entry)
+    @definition_one = attributes.fetch(:definition_one)
+    @id = @@definitions.length().+(1)
   end
 
   define_method(:save) do
@@ -18,15 +19,4 @@ class Definition
   define_singleton_method(:clear) do
     @@definitions = []
   end
-
-  define_singleton_method(:find) do |id|
-    found_definition = nil
-    @@definitions.each() do |definition|
-      if definition.id().eql?(identification.to_i())
-        found_definition = definition
-      end
-    end
-    found_definition
-  end
-
 end
