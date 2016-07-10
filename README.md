@@ -12,9 +12,13 @@ _Dictionary is an application that contains two custom Ruby classes: Word, and D
 
 * _This is a simple Web application that should run in modern browsers_
 
-* _You can check it out on Heroku_
+* _You can use it on Heroku_
 
-* [https://infinite-sea-70562.herokuapp.com/]
+* [https://agile-headland-45762.herokuapp.com/]
+
+* You can also download the source code on GitHub:
+
+* [https://github.com/yasskin/dictionary]
 
 ## Known Bugs
 
