@@ -16,37 +16,36 @@ describe('Word') do
 
   describe('#save') do
     it('saves the word in an array') do
-      test_word = Word.new({:name => 'Ruby'})
-      expect(test_word.save()).to(eq([test_word]))
+      new_word = Word.new({:name => 'Ruby'})
+      expect(new_word.save()).to(eq([new_word]))
     end
   end
 
   describe('.clear') do
     it('clears the array of words') do
-      test_word = Word.new({:name => 'Ruby'})
-      test_word.save()
+      new_word = Word.new({:name => 'Ruby'})
+      new_word.save()
       expect(Word.clear()).to(eq([]))
     end
   end
 
   describe('.all') do
     it('returns an array of all saved words') do
-      test_word = Word.new({:name => 'Ruby'})
-      test_word.save()
-      expect(Word.all()).to(eq([test_word]))
+      new_word = Word.new({:name => 'Ruby'})
+      new_word.save()
+      expect(Word.all()).to(eq([new_word]))
     end
   end
 
   describe('#id') do
     it('returns a unique id for a word') do
-      test_word1 = Word.new({:name => 'Ruby'})
-      test_word1.save()
-      test_word2 = Word.new({:name => 'Java'})
-      test_word2.save()
-      expect(test_word2.id()).to(eq(2))
+      new_word_one = Word.new({:name => 'Ruby'})
+      new_word_one.save()
+      new_word_two = Word.new({:name => 'Java'})
+      new_word_two.save()
+      expect(new_word_two.id()).to(eq(2))
     end
   end
-
 
   describe("Word#definitions") do
     it("should return a definition entry with an array that has two definitions") do

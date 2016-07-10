@@ -1,9 +1,17 @@
-
-<h1>Add a New Word</h1>
-<form action='/words' method='post'>
-  <div class="form-group">
-    <label for="name">Enter a word:</label>
-    <input type="text" name="name" id="name" class="form-control">
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="dictionary-header">
+      <img class="img-responsive" src="/img/typewriter-triumph.png" alt="an old Triumph typewriter"/>
+      <h1>Add a New Word</h1>
+    </div>
+    <div class="dictionary-form">
+      <form action='/words' method='post'>
+        <div class="form-group">
+          <label for="name">Enter a word:</label>
+          <input type="text" name="name" id="name" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-info">Add Word</button>
+      </form>
+    </div>
   </div>
-  <button type="submit" class="btn btn-primary">Add Word</button>
-</form>
+</div>

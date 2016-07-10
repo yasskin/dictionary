@@ -1,14 +1,23 @@
-
-<h1>Success!</h1>
-<br>
-<p> Your definition for the word <%= @word.name()%> has been added.</p>
-<div>
-  <ul>
-    <li>Definition: <%= @definition_one%></li>
-  </ul>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="dictionary-header">
+      <img class="img-responsive" src="/img/typewriter-keys.jpg" alt="an old typewriter"/>
+      <h1>Success!</h1>
+    </div>
+    <div class="dictionary-results">
+      <p> Your definition for the word "<%= @word.name()%>" has been added.</p>
+    </div>
+    <div class="dictionary-form">
+      <ul>
+        <li>Definition: <%= @definition_one%></li>
+      </ul>
+    </div>
+    <div class="dictionary-form">
+      <ul>
+        <li><a href='/words/<%=@word.id()%>/definitions/new'>Add Another Definition</a></li>
+        <li><a href='/words/<%=@word.id()%>'>Show All Definitions for "<%= @word.name()%>"</a></li>
+        <a href='/'>Home</a>
+      </ul>
+    </div>
+  </div>
 </div>
-<ul>
-  <li><a href='/words/<%=@word.id()%>/definitions/new'>Add Another Definition</a></li>
-  <li><a href='/words/<%=@word.id()%>'>Show All Definitions for <%= @word.name()%></a></li>
-  <a href='/'>Home</a>
-</ul>

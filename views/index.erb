@@ -1,21 +1,28 @@
-
-<%if @words.length().>(0)%>
-  <h1>Your words:</h1>
-  <div>
-    <ul>
-      <%@words.each() do |word|%>
-      <li><a href='/words/<%= word.id() %>'><%= word.name() %></a></li>
-      <%end%>
-    </ul>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="dictionary-header">
+      <% if @words.length().>(0) %>
+        <img class="img-responsive" src="/img/typewriter-triumph.png" alt="an old Triumph typewriter"/>
+        <h1>Your words:</h1>
+    </div>
+    <div class="dictionary-results">
+      <ul>
+        <%@words.each() do |word|%>
+        <li><a href='/words/<%= word.id() %>'><%= word.name() %></a></li>
+        <%end%>
+      </ul>
+    </div>
+    <div class="dictionary-form">
+      <a href='/words/new'>Add Another Word</a>
+    </div>
+      <% else %>
+    <div clas="dictionary-header">
+      <img class="img-responsive" src="/img/typewriter-triumph.png" alt="an old Triumph typewriter"/>
+      <h1>Dictionary!</h1>
+    </div>
+    <div class="dictionary-form">
+      <a href='/words/new'>Add a Word</a>
+    </div>
+    <% end %>
   </div>
-  <div>
-    <a href='/words/new'>Add Another Word</a>
-  </div>
-<%else%>
-<div>
-  <h1>Dictionary!</h1>
 </div>
-<div>
-  <a href='/words/new'>Add a Word</a>
-</div>
-<%end%>

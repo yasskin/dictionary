@@ -1,15 +1,23 @@
-<h1><%= @word.name() %></h1>
-<div>
-  <%@word.definition_entries().each() do |definition, i|%>
-  <ul>
-    <li>Definition</li>
-    <li>Definition: <%=definition.definition_one()%></li>
-  </ul>
-  <br>
-  <% end %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="dictionary-header">
+      <img class="img-responsive" src="/img/typewriter-overhead.jpg" alt="an overhead view of an old typewriter"/>
+      <h1><%= @word.name() %></h1>
+    </div>
+    <div class="dictionary-results">
+        <%@word.definition_entries().each() do |definition, i|%>
+        <ul>
+          <li>Definition</li>
+          <li>Definition: <%=definition.definition_one()%></li>
+        </ul>
+        <br>
+        <% end %>
+    </div>
+    <div class="dictionary-form">
+      <ul>
+        <li><a href='/words/<%=@word.id()%>/definitions/new'>Add a Definition</a></li>
+        <li><a href='/'>Home</a></li>
+      </ul>
+    </div>
+  </div>
 </div>
-
-<ul>
-  <li><a href='/words/<%=@word.id()%>/definitions/new'>Add a Definition</a></li>
-  <li><a href='/'>Home</a></li>
-</ul>

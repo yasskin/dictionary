@@ -1,9 +1,16 @@
-
-<h1>Success!</h1>
-<h3><%= @word_entry %></h3>
-
-<a href='/'>Home</a>
-<br>
-<a href='/words/new'>Add Another Word</a>
-<br>
-<a href ='/words/<%=@word.id()%>/definitions/new'>Add a definition for <%= @name %></a>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="dictionary-header">
+      <img class="img-responsive" src="/img/typewriter-ideal.jpg" alt="an old Ideal typewriter"/>
+      <h1>Success!</h1>
+    </div>
+    <div class="dictionary-form">
+      <h3><%= @word_entry %></h3>
+      <a href='/'>Home</a>
+      <br>
+      <a href='/words/new'>Add Another Word</a>
+      <br>
+      <a href ='/words/<%=@word.id()%>/definitions/new'>Add a definition for <%= @name %></a>
+    </div>
+  </div>
+</div>

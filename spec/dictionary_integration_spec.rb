@@ -26,7 +26,7 @@ describe('the add definition route', {:type => :feature}) do
     click_link('Ruby')
     expect(page).to have_content('Ruby')
     click_link('Add a Definition')
-    expect(page).to have_content('Add a New Definition')
+    expect(page).to have_content('Provide a Definition')
     fill_in('definition', :with => 'A dynamic, open source programming language with a focus on simplicity and productivity.')
     click_button('Add Definition')
     expect(page).to have_content('A dynamic, open source programming language with a focus on simplicity and productivity.')
